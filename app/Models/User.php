@@ -45,4 +45,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function personagens(){
+        return $this->hasMany(Personagem::class);
+    }
 }
