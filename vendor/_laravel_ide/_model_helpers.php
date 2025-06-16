@@ -5,7 +5,13 @@ namespace App\Models {
     /**
      * App\Models\Personagem
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property int $id
      * @property-read \App\Models\User $user
+     * @method static \Illuminate\Database\Eloquent\Builder<Personagem>|Personagem whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Personagem>|Personagem whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Personagem>|Personagem whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Personagem>|Personagem newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Personagem>|Personagem newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Personagem>|Personagem query()
