@@ -1,6 +1,6 @@
 # 📚 Catálogo de Personagens
 
-Um projeto pessoal para listar e gerenciar personagens favoritos de forma organizada. Idealizado como um exercício de estudo e prática em desenvolvimento web com Laravel.
+Um projeto pessoal para listar e gerenciar personagens favoritos de forma organizada. Idealizado como um exercício de estudo e prática em desenvolvimento backend com Laravel.
 
 ## 🚀 Funcionalidades
 
