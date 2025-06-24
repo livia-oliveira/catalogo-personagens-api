@@ -6,6 +6,8 @@ use App\Models\Personagem;
 
 use Illuminate\Http\Request;
 
+use App\Http\Requests\StorePersonagemRequest;
+
 class PersonagemController extends Controller
 {
     public function index(){
@@ -23,9 +25,28 @@ class PersonagemController extends Controller
         return response()->json([
             'message' => 'Erro detectado!',
             'error' => $e->getMessage(),
-            // se quiser mais detalhe: 'trace' => $e->getTraceAsString(),
         ], 500);
     }
 
  }
+
+    public function store(StorePersonagemRequest $request){
+
+        try {
+        $dados = $request->validated();
+
+        $personagem = Personagem::create($dados);
+
+        return response()->json([
+            'message' => 'Personagem criado com sucesso!',
+            'data' => $personagem,
+        ], 201);
+
+        }catch(\Exception $e){
+            return response()->json([
+                'message' => 'Erro detectado!',
+                'error' => $e->getMessage(),
+            ], 500);
+        }
+    }
 }
