@@ -33,6 +33,7 @@ class PersonagemController extends Controller
     public function store(StorePersonagemRequest $request){
 
         try {
+
         $dados = $request->validated();
 
         $personagem = Personagem::create($dados);
@@ -45,6 +46,20 @@ class PersonagemController extends Controller
         }catch(\Exception $e){
             return response()->json([
                 'message' => 'Erro detectado!',
+                'error' => $e->getMessage(),
+            ], 500);
+        }
+    }
+
+    public function show(Personagem $personagem){
+        try{
+            return response()->json([
+                'message' => 'Personagem encontrado com sucesso!',
+                'data' => $personagem,
+            ], 200);
+        }catch(\Exception $e){
+            return response()->json([
+                'message' => 'Erro ao buscar personagem',
                 'error' => $e->getMessage(),
             ], 500);
         }

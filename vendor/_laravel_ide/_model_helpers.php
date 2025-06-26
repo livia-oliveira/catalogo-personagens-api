@@ -7,9 +7,17 @@ namespace App\Models {
      *
      * @property \Illuminate\Support\Carbon|null $updated_at
      * @property \Illuminate\Support\Carbon|null $created_at
+     * @property int $user_id
+     * @property string|null $descricao
+     * @property string $origem
+     * @property string $nome
      * @property int $id
      * @property-read \App\Models\User $user
      * @method static \Illuminate\Database\Eloquent\Builder<Personagem>|Personagem whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Personagem>|Personagem whereNome($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Personagem>|Personagem whereOrigem($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Personagem>|Personagem whereDescricao($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Personagem>|Personagem whereUserId($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Personagem>|Personagem whereCreatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Personagem>|Personagem whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Personagem>|Personagem newModelQuery()
