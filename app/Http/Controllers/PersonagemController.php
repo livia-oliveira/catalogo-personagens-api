@@ -64,4 +64,19 @@ class PersonagemController extends Controller
             ], 500);
         }
     }
+
+    public function destroy(Personagem $personagem){
+        try{
+            $personagem->delete();
+
+            return response()->json([
+                'message' => 'Personagem excluído com sucesso',
+            ], 200);
+        }catch(\Exception $e){
+            return response()->json([
+                'message' => 'Erro ao excluir personagem',
+                'error' => $e->getMessage(),
+            ], 500);
+        }
+    }
 }
