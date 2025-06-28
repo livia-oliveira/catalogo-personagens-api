@@ -1,17 +1,28 @@
 # 📚 Catálogo de Personagens
 
-Um projeto pessoal para listar e gerenciar personagens favoritos de forma organizada. Idealizado como um exercício de estudo e prática em desenvolvimento backend com Laravel.
+Projeto pessoal para listar e gerenciar personagens favoritos de forma organizada.  
+Idealizado como um exercício prático de desenvolvimento backend com Laravel.
 
-## 🚀 Funcionalidades
+---
 
-- Cadastro de personagens com nome, origem e descrição
-- Listagem de personagens
+## ✨ Funcionalidades
 
-## 🛠️ Tecnologias utilizadas
+- ✅ Cadastro de personagens (nome, origem e descrição)
+- ✅ Listagem de personagens
+- 🔒 (Em breve) Autenticação de usuários
+- 📝 (Em breve) Atualização e remoção de personagens
 
-- Laravel
+---
 
-## 📦 Como rodar o projeto localmente
+## 🛠️ Tecnologias
+
+- [Laravel 12](https://laravel.com/)  
+- PHP 8.2  
+- SQLite (banco de dados leve para desenvolvimento local)
+
+---
+
+## ⚙️ Como rodar o projeto localmente
 
 1. Clone o repositório:
 ```bash
