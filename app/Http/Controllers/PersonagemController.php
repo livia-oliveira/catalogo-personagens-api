@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests\StorePersonagemRequest;
 
+use App\Http\Requests\UpdatePersonagemRequest;
+
+
 class PersonagemController extends Controller
 {
     public function index(){
@@ -62,6 +65,24 @@ class PersonagemController extends Controller
                 'message' => 'Erro ao buscar personagem',
                 'error' => $e->getMessage(),
             ], 500);
+        }
+    }
+
+    public function update(UpdatePersonagemRequest $request, Personagem $personagem){
+        try{
+            $dados = $request->validated();
+
+            $personagem->update($dados);
+
+            return response()->json([
+                'message' => 'Personagem atualizado com sucesso!',
+                'data' => $personagem,
+            ], 200);
+        }catch(\Exception $e){
+            return response()->json([
+                'message' => 'Erro ao atualizar personagem!',
+                'error' => $e->getMessage(),
+            ],500);
         }
     }
 
