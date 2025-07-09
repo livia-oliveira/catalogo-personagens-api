@@ -12,15 +12,16 @@ use App\Http\Requests\RegisterRequest;
 class AuthController extends Controller
 {
     public function register(RegisterRequest $request){
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password),
-        ]);
 
-        return response()->json([
-            'message' => 'Usuário registrado com sucesso',
-            'data' => $user,
-        ],201);
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => bcrypt($request->password),
+            ]);
+
+            return response()->json([
+                'message' => 'Usuário registrado com sucesso',
+                'data' => $user,
+            ],201);
     }
 }
