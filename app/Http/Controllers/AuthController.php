@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
 use App\Http\Requests\RegisterRequest;
+use App\Http\Requests\Auth\LoginRequest;
 
 class AuthController extends Controller
 {
@@ -23,5 +24,20 @@ class AuthController extends Controller
                 'message' => 'Usuário registrado com sucesso',
                 'data' => $user,
             ],201);
+    }
+
+    public function login(LoginRequest $request){
+
+        $request->authenticate();
+
+        $user = $request->user();
+
+        $token = $user->createToken('token-padrao')->plainTextToken;
+
+        return response()->json([
+            'message' => 'Login realizado com sucesso!',
+            'token' => $token,
+            'user' => $user,
+        ], 200);
     }
 }

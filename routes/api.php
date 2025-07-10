@@ -12,8 +12,5 @@ Route::put('/personagens/{personagem}', [PersonagemController::class, 'update'])
 Route::delete('/personagens/{personagem}', [PersonagemController::class, 'destroy']);
 
 Route::post('/register', [AuthController::class, 'register']);
-
-Route::post('/teste-status', function () {
-    return response()->json(['teste' => true], 201);
-});
+Route::post('/login', [AuthController::class, 'login']);
 
