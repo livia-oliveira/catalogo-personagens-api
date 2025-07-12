@@ -9,8 +9,7 @@ Idealizado como um exercício prático de desenvolvimento backend com Laravel.
 
 - ✅ Cadastro de personagens (nome, origem e descrição)
 - ✅ Listagem de personagens
-- 🔒 (Em breve) Autenticação de usuários
-- 📝 (Em breve) Atualização e remoção de personagens
+- 🔒 Autenticação de usuários
 
 ---
 
