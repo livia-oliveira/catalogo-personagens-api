@@ -1,4 +1,4 @@
-# 📚 Catálogo de Personagens
+# 🧙‍♂️ Catálogo de Personagens
 
 Projeto pessoal para listar e gerenciar personagens favoritos de forma organizada.  
 Idealizado como um exercício prático de desenvolvimento backend com Laravel.
