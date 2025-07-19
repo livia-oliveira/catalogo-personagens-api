@@ -20,10 +20,15 @@ class AuthController extends Controller
                 'password' => bcrypt($request->password),
             ]);
 
+            $token = $user->createToken('token-padrao')->plainTextToken;
+
             return response()->json([
                 'message' => 'Usuário registrado com sucesso',
                 'data' => $user,
+                'token' => $token,
             ],201);
+
+
     }
 
     public function login(LoginRequest $request){
@@ -39,5 +44,14 @@ class AuthController extends Controller
             'token' => $token,
             'user' => $user,
         ], 200);
+
+    }
+
+    public function logout(Request $request){
+        $request->user()->currentAccessToken()->delete();
+
+        return response()->json([
+            'message' => 'Logout realizado com sucesso'
+        ]);
     }
 }
