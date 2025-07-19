@@ -25,7 +25,6 @@ class StorePersonagemRequest extends FormRequest
             'nome' => 'required|string|max:255',
             'origem' => 'required|string|max:255',
             'descricao' => 'nullable|string',
-            'user_id' => 'required|exists:users,id',
         ];
     }
 }

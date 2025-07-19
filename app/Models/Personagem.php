@@ -11,10 +11,9 @@ use App\Models\User;
 
 class Personagem extends Model
 {
+    use HasFactory;
 
     protected $table = 'personagens';
-
-    use HasFactory;
 
     protected $fillable = [
         'nome',

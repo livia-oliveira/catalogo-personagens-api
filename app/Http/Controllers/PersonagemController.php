@@ -39,6 +39,8 @@ class PersonagemController extends Controller
 
         $dados = $request->validated();
 
+        $dados['user_id'] = auth()->id();
+
         $personagem = Personagem::create($dados);
 
         return response()->json([
