@@ -102,4 +102,15 @@ class PersonagemController extends Controller
             ], 500);
         }
     }
+
+    public function meusPersonagens(){
+        $user = auth()->user();
+
+        $personagens = $user->personagens;
+
+        return response()->json([
+            'message' => 'Personagens de usuario autenticado recuperados com sucesso',
+            'data' => $personagens,
+        ],200);
+    }
 }
