@@ -12,7 +12,6 @@ Este projeto é uma aplicação backend desenvolvida com Laravel que permite:
 ✅ Criar, listar, atualizar e deletar personagens  
 ✅ Listar apenas os personagens do usuário autenticado  
 
-Ideal para praticar conceitos de API REST, autenticação com Sanctum e relacionamento entre modelos!
 ---
 
 ## 🛠️ Tecnologias
