@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Personagem;
+use App\Models\Character;
 
 use Illuminate\Http\Request;
 
@@ -17,7 +17,7 @@ class PersonagemController extends Controller
 
        try{
 
-         $personagens = Personagem::all();
+         $personagens = Character::all();
 
         return response()->json([
             'message' => 'Lista de personagens recuperada com sucesso',
@@ -41,7 +41,7 @@ class PersonagemController extends Controller
 
         $dados['user_id'] = auth()->id();
 
-        $personagem = Personagem::create($dados);
+        $personagem = Character::create($dados);
 
         return response()->json([
             'message' => 'Personagem criado com sucesso!',
@@ -56,7 +56,7 @@ class PersonagemController extends Controller
         }
     }
 
-    public function show(Personagem $personagem){
+    public function show(Character $personagem){
         try{
             return response()->json([
                 'message' => 'Personagem encontrado com sucesso!',
@@ -70,7 +70,7 @@ class PersonagemController extends Controller
         }
     }
 
-    public function update(UpdatePersonagemRequest $request, Personagem $personagem){
+    public function update(UpdatePersonagemRequest $request, Character $personagem){
         try{
             $dados = $request->validated();
 
@@ -88,7 +88,7 @@ class PersonagemController extends Controller
         }
     }
 
-    public function destroy(Personagem $personagem){
+    public function destroy(Character $personagem){
         try{
             $personagem->delete();
 
@@ -103,7 +103,7 @@ class PersonagemController extends Controller
         }
     }
 
-    public function meusPersonagens(){
+    public function myCharacters(){
         $user = auth()->user();
 
         $personagens = $user->personagens;

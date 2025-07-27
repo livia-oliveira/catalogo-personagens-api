@@ -18,6 +18,6 @@ Route::post('/personagens', [PersonagemController::class, 'store']);
 Route::get('/personagens/{personagem}', [PersonagemController::class, 'show']);
 Route::put('/personagens/{personagem}', [PersonagemController::class, 'update']);
 Route::delete('/personagens/{personagem}', [PersonagemController::class, 'destroy']);
-Route::get('/meus-personagens', [PersonagemController::class, 'meusPersonagens']);
+Route::get('/meus-personagens', [PersonagemController::class, 'myCharacters']);
 });
 
